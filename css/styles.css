@@ -41,8 +41,9 @@
   --theme-primary: #f4623a;
   --theme-white: #fff;
   --theme-black: #000;
-  --theme-dark: #212529;
+  --theme-dark: #5c4a3d;
   --theme-gray: #6c757d;
+  --theme-muted: #8a7a6d; /* 70% dark + 30% white */
   
   /* Derived Colors - Calculated from core colors */
   --theme-primary-dark: #c34e2e; /* 80% primary + 20% black */
@@ -7408,7 +7409,7 @@ textarea.form-control-lg {
 }
 
 .text-muted {
-  color: #6c757d !important;
+  color: var(--theme-muted);
 }
 
 .text-black-50 {
