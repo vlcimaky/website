@@ -124,6 +124,28 @@
   border-color: var(--theme-muted) !important;
 }
 
+/* Responsive Icons */
+.feature-icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .feature-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .feature-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
 *,
 *::before,
 *::after {
