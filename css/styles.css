@@ -37,23 +37,24 @@
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 
-  /* Custom Theme Colors */
+  /* Core Theme Colors */
   --theme-primary: #f4623a;
-  --theme-primary-dark: #c34e2e;
-  --theme-primary-light: #fcd0c4;
-  --theme-primary-lighter: #fab19d;
-  
-  /* Neutral Colors */
   --theme-white: #fff;
   --theme-black: #000;
   --theme-dark: #212529;
   --theme-gray: #6c757d;
-  --theme-gray-light: #e9ecef;
-  --theme-gray-lighter: #f8f9fa;
-  --theme-gray-border: #dee2e6;
-  --theme-gray-border-light: #ced4da;
-  --theme-gray-border-lighter: #dde0e3;
-  --theme-gray-border-dark: #adb5bd;
+  
+  /* Derived Colors - Calculated from core colors */
+  --theme-primary-dark: #c34e2e; /* 80% primary + 20% black */
+  --theme-primary-light: #fcd0c4; /* 20% primary + 80% white */
+  --theme-primary-lighter: #fab19d; /* 10% primary + 90% white */
+  
+  /* Gray Scale - Derived from base gray */
+  --theme-gray-light: #e9ecef; /* 20% gray + 80% white */
+  --theme-gray-lighter: #f8f9fa; /* 10% gray + 90% white */
+  --theme-gray-border: #dee2e6; /* 30% gray + 70% white */
+  --theme-gray-border-light: #ced4da; /* 40% gray + 60% white */
+  --theme-gray-border-dark: #adb5bd; /* 60% gray + 40% black */
   
   /* Accent Colors */
   --theme-pink: #d63384;
@@ -62,17 +63,11 @@
   /* Masthead Overlay */
   --theme-masthead-overlay: rgba(92, 77, 66, 0.8);
   
-  /* Table Colors */
-  --theme-table-bg: #fde0d8;
-  --theme-table-striped-bg: #f0d5cd;
-  --theme-table-active-bg: #e4cac2;
-  --theme-table-border: #e4cac2;
-  
-  /* Additional Table Border Colors */
-  --theme-table-border-secondary: #cbccce;
-  --theme-table-border-success: #bcd0c7;
-  --theme-table-border-info: #badce3;
-  --theme-table-border-warning: #e6dbb9;
+  /* Table Colors - Derived from primary and gray */
+  --theme-table-bg: #fde0d8; /* 15% primary + 85% white */
+  --theme-table-striped-bg: #f0d5cd; /* 10% primary + 90% white */
+  --theme-table-active-bg: #e4cac2; /* 25% primary + 75% white */
+  --theme-table-border: var(--theme-table-active-bg);
 }
 
 *,
@@ -2049,7 +2044,7 @@ progress {
   --bs-table-hover-bg: #d1d2d4;
   --bs-table-hover-color: var(--theme-black);
   color: var(--theme-black);
-  border-color: var(--theme-table-border-secondary);
+  border-color: var(--theme-gray-border);
 }
 
 .table-success {
@@ -2264,7 +2259,7 @@ progress {
   }
 }
 .form-control:hover:not(:disabled):not([readonly])::file-selector-button {
-  background-color: var(--theme-gray-border-lighter);
+  background-color: var(--theme-gray-border-light);
 }
 .form-control::-webkit-file-upload-button {
   padding: 0.375rem 0.75rem;
@@ -2289,7 +2284,7 @@ progress {
   }
 }
 .form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
-  background-color: var(--theme-gray-border-lighter);
+  background-color: var(--theme-gray-border-light);
 }
 
 .form-control-plaintext {
@@ -10884,7 +10879,7 @@ body {
 }
 
 .page-section {
-  padding: 8rem 0;
+  padding: 4rem 0;
 }
 
 .text-white-75 {
