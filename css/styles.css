@@ -2115,11 +2115,11 @@ progress {
 .table-dark {
   --bs-table-bg: #212529;
   --bs-table-striped-bg: #2c3034;
-  --bs-table-striped-color: #fff;
+  --bs-table-striped-color: var(--theme-white);
   --bs-table-active-bg: #373b3e;
-  --bs-table-active-color: #fff;
+  --bs-table-active-color: var(--theme-white);
   --bs-table-hover-bg: #323539;
-  --bs-table-hover-color: #fff;
+  --bs-table-hover-color: var(--theme-white);
   color: var(--theme-white);
   border-color: #373b3e;
 }
@@ -2466,7 +2466,7 @@ textarea.form-control-lg {
 }
 .form-check-input:checked {
   background-color: var(--theme-primary);
-  border-color: #f4623a;
+  border-color: var(--theme-primary);
 }
 .form-check-input:checked[type=checkbox] {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
@@ -2476,7 +2476,7 @@ textarea.form-control-lg {
 }
 .form-check-input[type=checkbox]:indeterminate {
   background-color: var(--theme-primary);
-  border-color: #f4623a;
+  border-color: var(--theme-primary);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
 }
 .form-check-input:disabled {
@@ -2989,7 +2989,7 @@ textarea.form-control-lg {
 .btn-primary {
   color: var(--theme-white);
   background-color: var(--theme-primary);
-  border-color: #f4623a;
+  border-color: var(--theme-primary);
 }
 .btn-primary:hover {
   color: var(--theme-white);
@@ -3013,7 +3013,7 @@ textarea.form-control-lg {
 .btn-primary:disabled, .btn-primary.disabled {
   color: var(--theme-white);
   background-color: var(--theme-primary);
-  border-color: #f4623a;
+  border-color: var(--theme-primary);
 }
 
 .btn-secondary {
@@ -3228,12 +3228,12 @@ textarea.form-control-lg {
 
 .btn-outline-primary {
   color: var(--theme-primary);
-  border-color: #f4623a;
+  border-color: var(--theme-primary);
 }
 .btn-outline-primary:hover {
   color: var(--theme-white);
   background-color: var(--theme-primary);
-  border-color: #f4623a;
+  border-color: var(--theme-primary);
 }
 .btn-check:focus + .btn-outline-primary, .btn-outline-primary:focus {
   box-shadow: 0 0 0 0.25rem rgba(244, 98, 58, 0.5);
@@ -3241,7 +3241,7 @@ textarea.form-control-lg {
 .btn-check:checked + .btn-outline-primary, .btn-check:active + .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show {
   color: var(--theme-white);
   background-color: var(--theme-primary);
-  border-color: #f4623a;
+  border-color: var(--theme-primary);
 }
 .btn-check:checked + .btn-outline-primary:focus, .btn-check:active + .btn-outline-primary:focus, .btn-outline-primary:active:focus, .btn-outline-primary.active:focus, .btn-outline-primary.dropdown-toggle.show:focus {
   box-shadow: 0 0 0 0.25rem rgba(244, 98, 58, 0.5);
@@ -4624,7 +4624,7 @@ textarea.form-control-lg {
   z-index: 3;
   color: var(--theme-white);
   background-color: var(--theme-primary);
-  border-color: #f4623a;
+  border-color: var(--theme-primary);
 }
 .page-item.disabled .page-link {
   color: var(--theme-gray);
@@ -4904,7 +4904,7 @@ textarea.form-control-lg {
   z-index: 2;
   color: var(--theme-white);
   background-color: var(--theme-primary);
-  border-color: #f4623a;
+  border-color: var(--theme-primary);
 }
 .list-group-item + .list-group-item {
   border-top-width: 0;
@@ -7429,7 +7429,7 @@ textarea.form-control-lg {
 }
 
 .bg-primary {
-  background-color: #f4623a !important;
+  background-color: var(--theme-primary) !important;
 }
 
 .bg-secondary {
@@ -10977,7 +10977,7 @@ hr.divider-light {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
-  background: linear-gradient(to bottom, var(--theme-masthead-overlay) 0%, var(--theme-masthead-overlay) 100%), url("../assets/img/bg-masthead.jpeg");
+  background: linear-gradient(to bottom, var(--theme-masthead-overlay) 0%, var(--theme-masthead-overlay) 100%), url("../assets/img/bg-masthead_1.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
