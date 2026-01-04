@@ -11098,6 +11098,10 @@ hr.divider-light {
   }
 }
 
+.content-head {
+  margin-top: 5rem;
+}
+
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
