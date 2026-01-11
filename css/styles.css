@@ -11118,6 +11118,22 @@ body {
   height: 100%;
 }
 
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--theme-primary);
+  color: var(--theme-white);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  z-index: 9999;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 .page-section {
   padding: 4rem 0;
 }
