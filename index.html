@@ -41,6 +41,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script type="application/ld+json">
         {
         "@context": "https://schema.org",
@@ -50,6 +51,9 @@
         "logo": "https://vlcimakyostrava.cz/assets/logo.svg"
         }
     </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="/js/swiper.js"></script>
 </head>
 
 <body id="page-top">
@@ -102,52 +106,183 @@
             </div>
         </div>
     </header>
+
     <!-- References-->
     <section class="page-section" id="reference">
         <div class="container px-4 px-lg-5">
-            <!-- <h2 class="text-center mt-0">U nás najdete</h2>
-            <hr class="divider" /> -->
-            <div class="row gx-4 gx-lg-5">
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="mt-5">
-                        <h3 class="h4 mb-2">Jana</h3>
-                        <p class="text-muted mb-0">Školku můžeme jen doporučit. Líbí se nám respektující a individuální
-                            přístup k dětem. Velmi příjemné prostředí. Tety jsem snad nepotkala ve špatné náladě :-)
-                            Další bonus je, že se jednou za kvartál rodiny sejdou a společně vylepšují zahradu školky,
-                            posedí u ohně, případně tety připraví program pro děti. Děti tak vidí spolupráci mezi
-                            rodinami a myslím si, že takové akce pomáhají k tomu, aby se dítě ve školce cítilo bezpečně.
-                        </p>
+            <h2 class="text-center mt-0 mb-5">Co o nás říkají rodiče</h2>
+            <hr class="divider" />
+        </div>
+        <div class="container-fluid px-4 px-lg-5">
+            <div class="swiper references-swiper">
+                <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <svg class="card-icon-quote icon-quote-close" viewBox="0 -0.5 17 17" aria-hidden="true">
+                                    <path
+                                        d="M2,14.969 C1.447,14.969 1,14.534 1,14 C1,13.466 1.447,13.031 2,13.031 C4.757,13.031 6,11.83 6,9.124 L6,7.978 L2.559,7.978 C1.729,7.978 1.053,7.3 1.053,6.467 L1.053,2.511 C1.053,1.677 1.729,0.999 2.559,0.999 L6.494,0.999 C7.324,0.999 8,1.677 8,2.511 L8,9.123 C8,12.898 5.859,14.969 2,14.969 Z"
+                                        fill="currentColor" />
+                                    <path
+                                        d="M11,14.969 C10.447,14.969 10,14.534 10,14 C10,13.466 10.447,13.031 11,13.031 C13.757,13.031 15,11.83 15,9.124 L15,7.947 L11.533,7.947 C10.699,7.947 10.021,7.271 10.021,6.441 L10.021,2.505 C10.021,1.675 10.699,0.999 11.533,0.999 L15.488,0.999 C16.322,0.999 17,1.675 17,2.505 L17,9.123 C17,12.898 14.859,14.969 11,14.969 Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </h4>
+                            <div class="template-demo">
+                                <p class="text-muted mb-0">Školku můžeme jen doporučit. Líbí se nám respektující a
+                                    individuální
+                                    přístup k dětem. Velmi příjemné prostředí. Tety jsem snad nepotkala ve špatné náladě
+                                    :-)
+                                    Další bonus je, že se jednou za kvartál rodiny sejdou a společně vylepšují zahradu
+                                    školky,
+                                    posedí u ohně, případně tety připraví program pro děti. Děti tak vidí spolupráci
+                                    mezi
+                                    rodinami a myslím si, že takové akce pomáhají k tomu, aby se dítě ve školce cítilo
+                                    bezpečně.
+                                </p>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <!-- <div class="col-sm-2">
+                            <img class="profile-pic" src="https://img.icons8.com/bubbles/100/000000/edit-user.png">
+                        </div> -->
+                                <div class="col-sm-10">
+                                    <div class="profile">
+                                        <h4 class="cust-name">Jana</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="mt-5">
-                        <h3 class="h4 mb-2">Gabriela</h3>
-                        <p class="text-muted mb-0">Krásné místo, plné života, uprostřed klidu a přitom tak blízko
-                            centra. Počet dětí je přesně tak akorát aby se každé děťátko mohlo rozvíjet přesně tam, kde
-                            potřebuje. Kladou zde důraz na rozvíjení především sociálních dovedností a směřují děti k
-                            samostatnosti, přesně to jsme hledali ! Děkujeme ❤️</p>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <svg class="card-icon-quote icon-quote-close" viewBox="0 -0.5 17 17" aria-hidden="true">
+                                    <path
+                                        d="M2,14.969 C1.447,14.969 1,14.534 1,14 C1,13.466 1.447,13.031 2,13.031 C4.757,13.031 6,11.83 6,9.124 L6,7.978 L2.559,7.978 C1.729,7.978 1.053,7.3 1.053,6.467 L1.053,2.511 C1.053,1.677 1.729,0.999 2.559,0.999 L6.494,0.999 C7.324,0.999 8,1.677 8,2.511 L8,9.123 C8,12.898 5.859,14.969 2,14.969 Z"
+                                        fill="currentColor" />
+                                    <path
+                                        d="M11,14.969 C10.447,14.969 10,14.534 10,14 C10,13.466 10.447,13.031 11,13.031 C13.757,13.031 15,11.83 15,9.124 L15,7.947 L11.533,7.947 C10.699,7.947 10.021,7.271 10.021,6.441 L10.021,2.505 C10.021,1.675 10.699,0.999 11.533,0.999 L15.488,0.999 C16.322,0.999 17,1.675 17,2.505 L17,9.123 C17,12.898 14.859,14.969 11,14.969 Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </h4>
+                            <div class="template-demo">
+                                <p class="text-muted mb-0">Krásné místo, plné života, uprostřed klidu a přitom tak
+                                    blízko
+                                    centra. Počet dětí je přesně tak akorát aby se každé děťátko mohlo rozvíjet přesně
+                                    tam,
+                                    kde
+                                    potřebuje. Kladou zde důraz na rozvíjení především sociálních dovedností a směřují
+                                    děti
+                                    k
+                                    samostatnosti, přesně to jsme hledali ! Děkujeme ❤️
+                                </p>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <!-- <div class="col-sm-2">
+                                <img class="profile-pic" src="https://img.icons8.com/bubbles/100/000000/edit-user.png">
+                            </div> -->
+                                <div class="col-sm-10">
+                                    <div class="profile">
+                                        <h4 class="cust-name">Gabriela</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="mt-5">
-                        <h3 class="h4 mb-2">Eva</h3>
-                        <p class="text-muted mb-0">Vlčí máky jsou místo, kde se k dětem chovají s velkým respektem a
-                            všímavostí k jejich potřebám. Učí je lásku k přírodě i k sobě navzájem. Nejen dítě, ale i
-                            rodič zde vždy najdou otevřenou náruč průvodců. Je zde komunita velice laskavých lidí. Je to
-                            místo, kde se ani dospělému při odchodu moc nechce domů ❤️</p>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <svg class="card-icon-quote icon-quote-close" viewBox="0 -0.5 17 17" aria-hidden="true">
+                                    <path
+                                        d="M2,14.969 C1.447,14.969 1,14.534 1,14 C1,13.466 1.447,13.031 2,13.031 C4.757,13.031 6,11.83 6,9.124 L6,7.978 L2.559,7.978 C1.729,7.978 1.053,7.3 1.053,6.467 L1.053,2.511 C1.053,1.677 1.729,0.999 2.559,0.999 L6.494,0.999 C7.324,0.999 8,1.677 8,2.511 L8,9.123 C8,12.898 5.859,14.969 2,14.969 Z"
+                                        fill="currentColor" />
+                                    <path
+                                        d="M11,14.969 C10.447,14.969 10,14.534 10,14 C10,13.466 10.447,13.031 11,13.031 C13.757,13.031 15,11.83 15,9.124 L15,7.947 L11.533,7.947 C10.699,7.947 10.021,7.271 10.021,6.441 L10.021,2.505 C10.021,1.675 10.699,0.999 11.533,0.999 L15.488,0.999 C16.322,0.999 17,1.675 17,2.505 L17,9.123 C17,12.898 14.859,14.969 11,14.969 Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </h4>
+                            <div class="template-demo">
+                                <p class="text-muted mb-0">Vlčí máky jsou místo, kde se k dětem chovají s velkým
+                                    respektem a
+                                    všímavostí k jejich potřebám. Učí je lásku k přírodě i k sobě navzájem. Nejen dítě,
+                                    ale
+                                    i
+                                    rodič zde vždy najdou otevřenou náruč průvodců. Je zde komunita velice laskavých
+                                    lidí.
+                                    Je to
+                                    místo, kde se ani dospělému při odchodu moc nechce domů ❤️
+                                </p>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <!-- <div class="col-sm-2">
+                                <img class="profile-pic" src="https://img.icons8.com/bubbles/100/000000/edit-user.png">
+                            </div> -->
+                                <div class="col-sm-10">
+                                    <div class="profile">
+                                        <h4 class="cust-name">Eva</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="mt-5">
-                        <h3 class="h4 mb-2">Eliška</h3>
-                        <p class="text-muted mb-0">Hledala jsem bezpečné prostředí pro děti, kde se k nim přistupuje s
-                            respektem k sobě samému, ostatním i přírodě. Ve Vlčích mácích jsem to našla a ještě mnohem
-                            víc, komunitu skvělých lidí, kteří drží při sobě, průvodkyně, které situace řeší s klidem a
-                            nadhledem a klidné prostředí, které by málokdo hledal tak blízko Ostravy. Moc doporučuji,
-                            zejména pokud to má být první zkušenost děťátka s kolektivem. Rodič je během adaptace vítán
-                            a podporován stejně jako dítě.</p>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <svg class="card-icon-quote icon-quote-close" viewBox="0 -0.5 17 17" aria-hidden="true">
+                                    <path
+                                        d="M2,14.969 C1.447,14.969 1,14.534 1,14 C1,13.466 1.447,13.031 2,13.031 C4.757,13.031 6,11.83 6,9.124 L6,7.978 L2.559,7.978 C1.729,7.978 1.053,7.3 1.053,6.467 L1.053,2.511 C1.053,1.677 1.729,0.999 2.559,0.999 L6.494,0.999 C7.324,0.999 8,1.677 8,2.511 L8,9.123 C8,12.898 5.859,14.969 2,14.969 Z"
+                                        fill="currentColor" />
+                                    <path
+                                        d="M11,14.969 C10.447,14.969 10,14.534 10,14 C10,13.466 10.447,13.031 11,13.031 C13.757,13.031 15,11.83 15,9.124 L15,7.947 L11.533,7.947 C10.699,7.947 10.021,7.271 10.021,6.441 L10.021,2.505 C10.021,1.675 10.699,0.999 11.533,0.999 L15.488,0.999 C16.322,0.999 17,1.675 17,2.505 L17,9.123 C17,12.898 14.859,14.969 11,14.969 Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </h4>
+                            <div class="template-demo">
+                                <p class="text-muted mb-0">Hledala jsem bezpečné prostředí pro děti, kde se k nim
+                                    přistupuje
+                                    s
+                                    respektem k sobě samému, ostatním i přírodě. Ve Vlčích mácích jsem to našla a ještě
+                                    mnohem
+                                    víc, komunitu skvělých lidí, kteří drží při sobě, průvodkyně, které situace řeší s
+                                    klidem a
+                                    nadhledem a klidné prostředí, které by málokdo hledal tak blízko Ostravy. Moc
+                                    doporučuji,
+                                    zejména pokud to má být první zkušenost děťátka s kolektivem. Rodič je během
+                                    adaptace
+                                    vítán
+                                    a podporován stejně jako dítě.
+                                </p>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <!-- <div class="col-sm-2">
+                                <img class="profile-pic" src="https://img.icons8.com/bubbles/100/000000/edit-user.png">
+                            </div> -->
+                                <div class="col-sm-10">
+                                    <div class="profile">
+                                        <h4 class="cust-name">Eliška</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                </div>
+                <!-- Swiper Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Swiper Pagination -->
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
@@ -171,7 +306,7 @@
                                 alt="Přítomnost rodičů vítána" /></div>
                         <p class="text-muted mb-0">Naši zkušení pedagogové a pedagožky zaručují laskavý přístup,
                             kvalitní lesní pedagogiku a hodně svobody v bezpečí pravidel, která dávají smysl.</p>
-                            <p><a href="/pedagogove.html">Náš tým</a>
+                        <p><a href="/pedagogove.html">Náš tým</a>
                         </p>
                     </div>
                 </div>
@@ -181,7 +316,7 @@
                                 alt="Individuální laskavý přístup" /></div>
                         <p class="text-muted mb-0">Do našeho skromného outdoorového zázemí se vejde maximálně 12 dětí,
                             což nám umožňuje věnovat každému maximální pozornost!</p>
-                            <p><a href="/zazemi.html">Jak to u nás vypadá?</a></p>
+                        <p><a href="/zazemi.html">Jak to u nás vypadá?</a></p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center">
@@ -190,7 +325,7 @@
                                 alt="Komunitní atmosféra" /></div>
                         <p class="text-muted mb-0">Příroda nám nabízí nekonečné množství podnětů ke zdravému rozvoji a
                             vzdělávání.</p>
-                            <a href="/vzdelani.html">Vzdělávací koncepce a témata roku</a></p>
+                        <a href="/vzdelani.html">Vzdělávací koncepce a témata roku</a></p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 text-center">
@@ -207,7 +342,7 @@
                                 alt="Komunitní atmosféra" /></div>
                         <p class="text-muted mb-0">Setkáváme se, pečujeme o naše zázemí a komunitu a organicky se
                             rozrůstáme.</p>
-                            <a href="#komunita">Komunita</a></p>
+                        <a href="#komunita">Komunita</a></p>
                     </div>
                 </div>
             </div>
@@ -227,7 +362,7 @@
     </section>
     <!-- Portfolio-->
     <div class="page-section" id="portfolio">
-        <div class="container-fluid p-0">
+        <div class="container p-0">
             <div class="row g-0">
                 <div class="col-lg-4 col-sm-6">
                     <a class="portfolio-box" href="assets/img/1.jpg" title="Project Name">
@@ -288,7 +423,7 @@
             <p>Co se u nás zrovna děje naleznete na našich sociálních sítích. Těšíme se na shledání.</p>
             <!-- <img class="img-fluid" src="assets/img/20.jpg" alt="..." /> -->
         </div>
-        <div class="container-fluid p-0">
+        <div class="container p-0">
             <div class="row g-0">
                 <div class="col-lg-4 col-sm-6">
                     <a class="portfolio-box" href="assets/img/1.jpg" title="Project Name">
@@ -337,144 +472,149 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- FAQ-->
-    <section class="page-section" id="otazky">
-        <div class="container px-4 px-lg-5">
-            <h2 class="text-center mt-0">Často kladené dotazy</h2>
-            <hr class="divider" />
-            <div class="accordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                            aria-controls="panelsStayOpen-collapseOne">
-                            Jste skutečně pořád venku?
-                        </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-                        <div class="accordion-body">
-                            Většinu programu se snažíme nabízet ve venkovním prostředí, neusilujeme však o “survival”, a
-                            děti se
-                            tak mohou schovat do zázemí, kde je možné zatopit. Jsou-li podmínky počasí skutečně
-                            nepříznivé
-                            (např. Velký mráz nebo vítr), snažíme se vymyslet bezpečnější alternativu, kterou může být
-                            například
-                            návštěva kultury ve městě. Naprosto zásadní pro pobyt venku je ale dostatek vhodného
-                            oblečení.
+        </div>
+        <!-- FAQ-->
+        <section class="page-section" id="otazky">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">Často kladené dotazy</h2>
+                <hr class="divider" />
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                aria-controls="panelsStayOpen-collapseOne">
+                                Jste skutečně pořád venku?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                Většinu programu se snažíme nabízet ve venkovním prostředí, neusilujeme však o
+                                “survival”, a
+                                děti se
+                                tak mohou schovat do zázemí, kde je možné zatopit. Jsou-li podmínky počasí skutečně
+                                nepříznivé
+                                (např. Velký mráz nebo vítr), snažíme se vymyslet bezpečnější alternativu, kterou může
+                                být
+                                například
+                                návštěva kultury ve městě. Naprosto zásadní pro pobyt venku je ale dostatek vhodného
+                                oblečení.
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
-                            aria-controls="panelsStayOpen-collapseFour">
-                            Jaký je rozdíl mezi Lesním klubem a Lesní školkou?
-                        </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            Jako Lesní klub jsme více nezávislí a můžeme naše fungování v rámci určitých pravidel tvořit
-                            nezávisle na vyhláškách Ministerstva školství. To je v mnoha ohledech velkou výhodou -
-                            především pro
-                            lidi, kteří se rádi podílejí na fungování klubu a upřednostňují spíše komunitní atmosféru
-                            prodloužené rodiny než-li instituce. Jsme nezisková organizace a nepobíráme žádné příspěvky
-                            od
-                            státu. Více informací naleznete na stránkách www.lesnims.cz
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseFour">
+                                Jaký je rozdíl mezi Lesním klubem a Lesní školkou?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                Jako Lesní klub jsme více nezávislí a můžeme naše fungování v rámci určitých pravidel
+                                tvořit
+                                nezávisle na vyhláškách Ministerstva školství. To je v mnoha ohledech velkou výhodou -
+                                především pro
+                                lidi, kteří se rádi podílejí na fungování klubu a upřednostňují spíše komunitní
+                                atmosféru
+                                prodloužené rodiny než-li instituce. Jsme nezisková organizace a nepobíráme žádné
+                                příspěvky
+                                od
+                                státu. Více informací naleznete na stránkách www.lesnims.cz
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
-                            aria-controls="panelsStayOpen-collapseFive">
-                            Můžou k Vám něočkované děti?
-                        </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            Ano. Stojíme si ale za tím, aby to nebyl jediný důvod, proč volíte právě Vlčí máky.
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseFive">
+                                Můžou k Vám něočkované děti?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                Ano. Stojíme si ale za tím, aby to nebyl jediný důvod, proč volíte právě Vlčí máky.
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false"
-                            aria-controls="panelsStayOpen-collapseSeven">
-                            Jaké jsou podmínky pro přijetí?
-                        </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            Dovršení věku 3 let, odplenkování, schopnost komunikovat jakýmkoliv způsobem ty
-                            nejzákladnější
-                            potřeby, schopnost separace od rodičů (po adaptaci).
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseSeven">
+                                Jaké jsou podmínky pro přijetí?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                Dovršení věku 3 let, odplenkování, schopnost komunikovat jakýmkoliv způsobem ty
+                                nejzákladnější
+                                potřeby, schopnost separace od rodičů (po adaptaci).
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Contact-->
-    <section class="page-section" id="kontakt">
-        <div class="container px-4 px-lg-5">
-            <h2 class="text-center mt-0">Kontakt</h2>
-            <hr class="divider" />
-            <div class="row align-items-start text-center">
-                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <h5><strong>Markéta Sýkorová</strong></h5>
-                    <p>
-                        Koordinátorka<br>
-                        Tel. <a href="tel:+420792368049">+420 792 368 049</a><br>
-                        E-mail: <a href="mailto:vlcimakyostrava@gmail.com">vlcimakyostrava@gmail.com</a><br>
-                    </p>
-                    <p>
-                        <strong>Spolek - Z města do Lesa</strong><br>
-                        IČO: 09428429<br>
-                        Bankovní spojení: 1033253797/5500<br>
-                    </p>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <!-- <h3>Kde nás najdete</h3> -->
-                    <a href="https://maps.app.goo.gl/cyqHCc7z5GVXkoKz9" target="_blank">
-                        <img src="assets/img/mapa-google.jpg" alt="mapa" class="img-fluid"
-                            style="max-width: 100%; height: auto;">
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-12 col-12 mb-4">
-                    <h3>Jak se k nám dostanete</h3>
-                    <p>Nejbližší zastávky MHD<br>Hranečník (tram, bus, trolejbus), Zvěřinská (trolejbus)</p>
-                    <p>Dostupnost by neměla být překážkou, a proto když bude zájemců více, můžeme uspořádat hromadné
-                        vyzvedávání na Hranečníku.</p>
+        </section>
+        <!-- Contact-->
+        <section class="page-section" id="kontakt">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">Kontakt</h2>
+                <hr class="divider" />
+                <div class="row align-items-start text-center">
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <h5><strong>Markéta Sýkorová</strong></h5>
+                        <p>
+                            Koordinátorka<br>
+                            Tel. <a href="tel:+420792368049">+420 792 368 049</a><br>
+                            E-mail: <a href="mailto:vlcimakyostrava@gmail.com">vlcimakyostrava@gmail.com</a><br>
+                        </p>
+                        <p>
+                            <strong>Spolek - Z města do Lesa</strong><br>
+                            IČO: 09428429<br>
+                            Bankovní spojení: 1033253797/5500<br>
+                        </p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <!-- <h3>Kde nás najdete</h3> -->
+                        <a href="https://maps.app.goo.gl/cyqHCc7z5GVXkoKz9" target="_blank">
+                            <img src="assets/img/mapa-google.jpg" alt="mapa" class="img-fluid"
+                                style="max-width: 100%; height: auto;">
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-12 mb-4">
+                        <h3>Jak se k nám dostanete</h3>
+                        <p>Nejbližší zastávky MHD<br>Hranečník (tram, bus, trolejbus), Zvěřinská (trolejbus)</p>
+                        <p>Dostupnost by neměla být překážkou, a proto když bude zájemců více, můžeme uspořádat hromadné
+                            vyzvedávání na Hranečníku.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Footer-->
-    <footer class="bg-light py-5">
-        <div class="container px-4 px-lg-5">
-            <div class="small text-center text-muted">Vytvořeno &copy; 2026 | Vlčí máky - lesní klub Ostrava</div>
-        </div>
+        </section>
+        <!-- Footer-->
+        <footer class="bg-light py-5">
+            <div class="container px-4 px-lg-5">
+                <div class="small text-center text-muted">Vytvořeno &copy; 2026 | Vlčí máky - lesní klub Ostrava</div>
+            </div>
 
-        <!-- <div class="container px-4 px-lg-5 pt-2">
+            <!-- <div class="container px-4 px-lg-5 pt-2">
             <div class="small text-center text-muted">Distributed By <a href="https://themewagon.com/">Themewagon</a>
         </div> -->
-        </div>
-    </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- SimpleLightbox plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 
 </html>
