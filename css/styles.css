@@ -11255,6 +11255,186 @@ body {
   }
 }
 
+/* Equipment Section - matching pedagogove layout */
+#kontakt .equipment-image-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+}
+
+#kontakt .equipment-image {
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.25), 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 70%;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+#kontakt .equipment-image:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.35), 0 0.75rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+#kontakt .col-md-6.d-flex {
+  min-height: 400px;
+}
+
+#kontakt .equipment-text {
+  padding: 2rem;
+}
+
+#kontakt .equipment-text .text-muted {
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  #kontakt .col-md-6.d-flex {
+    min-height: auto;
+  }
+  
+  #kontakt .equipment-image {
+    margin-bottom: 1.5rem;
+    border-radius: 0.75rem;
+    max-width: 85%;
+  }
+  
+  #kontakt .equipment-text {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Zázemí Carousel Styling - matching references section */
+#zazemiCarousel {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem 3rem 3rem;
+  position: relative;
+}
+
+#zazemiCarousel .carousel-inner {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+#zazemiCarousel .carousel-item {
+  width: 100%;
+}
+
+#zazemiCarousel .carousel-item img {
+  object-fit: cover;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  display: block;
+}
+
+#zazemiCarousel .carousel-control-prev,
+#zazemiCarousel .carousel-control-next {
+  width: 4.5rem;
+  opacity: 1;
+  color: var(--theme-primary);
+}
+
+#zazemiCarousel .carousel-control-prev:hover,
+#zazemiCarousel .carousel-control-next:hover {
+  opacity: 0.8;
+}
+
+#zazemiCarousel .carousel-control-icon {
+  font-size: 1.5rem;
+  color: var(--theme-primary);
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#zazemiCarousel .carousel-indicators {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0.75rem 0;
+  z-index: 15;
+}
+
+#zazemiCarousel .carousel-indicators button {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: var(--theme-primary);
+  opacity: 0.5;
+  margin: 0 0.25rem;
+  border: none;
+}
+
+#zazemiCarousel .carousel-indicators button.active {
+  opacity: 1;
+}
+
+#zazemiCarousel .portfolio-box {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Zázemí Section Text Column */
+#zazemi .col-md-6:last-child {
+  padding-left: 2rem;
+}
+
+#zazemi .col-md-6:last-child h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+#zazemi .col-md-6:last-child ul {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  #zazemi .col-md-6:last-child {
+    padding-left: 0;
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #zazemiCarousel {
+    padding: 0 2.5rem 2.5rem 2.5rem;
+  }
+  
+  #zazemiCarousel .carousel-control-icon {
+    font-size: 1.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  #zazemiCarousel .carousel-indicators {
+    bottom: 0.5rem;
+    padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  #zazemiCarousel {
+    padding: 0 2rem 2rem 2rem;
+  }
+  
+  #zazemiCarousel .carousel-indicators {
+    bottom: 0.25rem;
+    padding: 0.5rem 0;
+  }
+}
+
 @media (max-width: 768px) {
   #pedagogove .row {
     margin-bottom: 3rem;

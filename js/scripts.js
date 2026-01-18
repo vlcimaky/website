@@ -61,4 +61,9 @@ window.addEventListener('DOMContentLoaded', event => {
         elements: '#pedagogove a.team-member-image-link'
     });
 
+    // Activate SimpleLightbox plugin for equipment images
+    new SimpleLightbox({
+        elements: '#kontakt a.equipment-image-link'
+    });
+
 });
