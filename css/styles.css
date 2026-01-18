@@ -11407,6 +11407,63 @@ body {
   }
 }
 
+/* Program Section - matching pedagogove layout */
+#program-dne .program-image-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+
+#program-dne .program-image {
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.25), 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 90%;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+#program-dne .program-image:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.35), 0 0.75rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+#program-dne .col-md-6.d-flex {
+  min-height: 500px;
+  align-items: center;
+}
+
+#program-dne .program-text {
+  padding: 2rem;
+}
+
+#program-dne .program-text .text-muted {
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  #program-dne .col-md-6.d-flex {
+    min-height: auto;
+    align-items: flex-start;
+  }
+  
+  #program-dne .program-image {
+    margin-bottom: 1.5rem;
+    border-radius: 0.75rem;
+    max-width: 90%;
+  }
+  
+  #program-dne .program-text {
+    padding: 1.5rem 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   #zazemiCarousel {
     padding: 0 2.5rem 2.5rem 2.5rem;

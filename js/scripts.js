@@ -66,4 +66,9 @@ window.addEventListener('DOMContentLoaded', event => {
         elements: '#kontakt a.equipment-image-link'
     });
 
+    // Activate SimpleLightbox plugin for program images
+    new SimpleLightbox({
+        elements: 'a.program-image-link'
+    });
+
 });
