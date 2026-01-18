@@ -109,24 +109,44 @@
             </ul>
         </div>
     </section>
-    <!-- Portfolio-->
+    <!-- Portfolio Carousel-->
     <div class="page-section" id="portfolio">
-        <div class="container-fluid p-0">
-            <div class="row g-0">
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/13.jpg" title="Project Name">
-                        <img class="img-fluid" src="assets/img/13.jpg" alt="..." />
-                    </a>
+        <div class="container px-4 px-lg-5">
+            <div id="zazemiCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a class="portfolio-box" href="assets/img/13.jpg" title="Zázemí lesního klubu">
+                            <img class="d-block w-100 img-fluid" src="assets/img/13.jpg" alt="Zázemí lesního klubu" />
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a class="portfolio-box" href="assets/img/13(1).jpg" title="Zázemí lesního klubu">
+                            <img class="d-block w-100 img-fluid" src="assets/img/13(1).jpg" alt="Zázemí lesního klubu" />
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a class="portfolio-box" href="assets/img/13(2).jpg" title="Zázemí lesního klubu">
+                            <img class="d-block w-100 img-fluid" src="assets/img/13(2).jpg" alt="Zázemí lesního klubu" />
+                        </a>
+                    </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/13(1).jpg" title="Project Name">
-                        <img class="img-fluid" src="assets/img/13(1).jpg" alt="..." />
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/13(2).jpg" title="Project Name">
-                        <img class="img-fluid" src="assets/img/13(2).jpg" alt="..." />
-                    </a>
+                
+                <!-- Previous/Next controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#zazemiCarousel" data-bs-slide="prev">
+                    <i class="bi bi-chevron-left carousel-control-icon" aria-hidden="true"></i>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#zazemiCarousel" data-bs-slide="next">
+                    <i class="bi bi-chevron-right carousel-control-icon" aria-hidden="true"></i>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                
+                <!-- Indicators at bottom -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#zazemiCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#zazemiCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#zazemiCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
             </div>
         </div>
