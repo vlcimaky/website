@@ -11407,6 +11407,42 @@ body {
   }
 }
 
+/* Conception Hero Section - matching masthead style */
+header.conception-hero {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 4.5rem);
+  background: linear-gradient(to bottom, var(--theme-masthead-overlay) 0%, var(--theme-masthead-overlay) 100%), url("../assets/img/14.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+header.conception-hero h1, header.conception-hero .h1 {
+  font-size: 2.25rem;
+}
+
+@media (min-width: 992px) {
+  header.conception-hero {
+    height: 100vh;
+    min-height: 40rem;
+    padding-top: 4.5rem;
+    padding-bottom: 0;
+  }
+  header.conception-hero p {
+    font-size: 1.15rem;
+  }
+  header.conception-hero h1, header.conception-hero .h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  header.conception-hero h1, header.conception-hero .h1 {
+    font-size: 3.5rem;
+  }
+}
+
 /* Program Section - matching pedagogove layout */
 #program-dne .program-image-link {
   display: flex;
