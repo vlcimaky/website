@@ -11443,6 +11443,128 @@ header.conception-hero h1, header.conception-hero .h1 {
   }
 }
 
+/* Download Section - matching equipment layout */
+#ke-stazeni {
+  margin-bottom: 4rem;
+}
+
+#ke-stazeni .download-image-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+}
+
+#ke-stazeni .download-image {
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.25), 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 67.5%;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+#ke-stazeni .download-image:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.35), 0 0.75rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+#ke-stazeni .col-md-6.d-flex {
+  min-height: 500px;
+  align-items: center;
+}
+
+#ke-stazeni .download-list {
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  #ke-stazeni {
+    margin-bottom: 3rem;
+  }
+  
+  #ke-stazeni .col-md-6.d-flex {
+    min-height: auto;
+  }
+  
+  #ke-stazeni .download-image {
+    margin-bottom: 1.5rem;
+    border-radius: 0.75rem;
+    max-width: 67.5%;
+  }
+  
+  #ke-stazeni .download-list {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Zápis Section Styling */
+.zapis-section {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.zapis-section h3 {
+  color: var(--theme-dark);
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.zapis-section h4 {
+  color: var(--theme-primary);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.zapis-subsection {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--theme-primary);
+}
+
+.zapis-section .text-muted {
+  line-height: 1.7;
+}
+
+.zapis-section ul {
+  line-height: 1.8;
+}
+
+.zapis-section a {
+  color: var(--theme-primary);
+  text-decoration: none;
+}
+
+.zapis-section a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .zapis-section {
+    margin-bottom: 3rem !important;
+  }
+  
+  .zapis-subsection {
+    padding: 1.25rem;
+  }
+  
+  .zapis-section h3 {
+    font-size: 1.5rem;
+  }
+  
+  .zapis-section h4 {
+    font-size: 1.1rem;
+  }
+}
+
 /* Program Section - matching pedagogove layout */
 #program-dne .program-image-link {
   display: flex;

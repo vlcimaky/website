@@ -71,4 +71,9 @@ window.addEventListener('DOMContentLoaded', event => {
         elements: 'a.program-image-link'
     });
 
+    // Activate SimpleLightbox plugin for download images
+    new SimpleLightbox({
+        elements: 'a.download-image-link'
+    });
+
 });
