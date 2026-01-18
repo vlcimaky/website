@@ -11502,6 +11502,161 @@ header.conception-hero h1, header.conception-hero .h1 {
   }
 }
 
+/* Ceník Section Styling */
+.pricing-card {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.pricing-card:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card-featured {
+  border: 2px solid var(--theme-primary);
+  background-color: #fff;
+}
+
+.pricing-card h4 {
+  color: var(--theme-dark);
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.pricing-amount {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.pricing-amount .price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--theme-primary);
+  line-height: 1;
+}
+
+.pricing-amount .currency {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--theme-dark);
+}
+
+.pricing-amount .period {
+  font-size: 1rem;
+  color: var(--theme-dark);
+  opacity: 0.7;
+}
+
+.cenik-section {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cenik-section .text-muted {
+  line-height: 1.7;
+}
+
+.absence-list ul {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--theme-primary);
+}
+
+.absence-list li {
+  line-height: 1.8;
+  color: var(--theme-dark);
+}
+
+@media (max-width: 768px) {
+  .pricing-card {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .pricing-amount .price {
+    font-size: 2rem;
+  }
+  
+  .pricing-amount .currency {
+    font-size: 1.25rem;
+  }
+  
+  .cenik-section {
+    margin-bottom: 3rem !important;
+  }
+}
+
+/* Contact Section Styling */
+.contact-card {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.contact-card:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.contact-card h4 {
+  color: var(--theme-dark);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.contact-card .text-muted {
+  line-height: 1.7;
+}
+
+.contact-card a {
+  color: var(--theme-primary);
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+.contact-map {
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-map:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.contact-card .bi {
+  color: var(--theme-primary);
+}
+
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-card h4 {
+    font-size: 1.25rem;
+  }
+}
+
 /* Zápis Section Styling */
 .zapis-section {
   max-width: 900px;
