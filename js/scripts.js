@@ -56,4 +56,9 @@ window.addEventListener('DOMContentLoaded', event => {
         elements: '#portfolio a.portfolio-box'
     });
 
+    // Activate SimpleLightbox plugin for team member images
+    new SimpleLightbox({
+        elements: '#pedagogove a.team-member-image-link'
+    });
+
 });
