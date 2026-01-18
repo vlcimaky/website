@@ -46,7 +46,7 @@
   --theme-muted: #8a7a6d; /* 70% dark + 30% white */
   
   /* Derived Colors - Calculated from core colors */
-  --theme-primary-dark: #c34e2e; /* 80% primary + 20% black */
+  --theme-primary-dark: #b87020; /* Darker orange for hover states */
   --theme-primary-light: #fcd0c4; /* 20% primary + 80% white */
   --theme-primary-lighter: #fab19d; /* 10% primary + 90% white */
   
@@ -3173,8 +3173,8 @@ textarea.form-control-lg {
 }
 .btn-primary:hover {
   color: var(--theme-white);
-  background-color: #cf5331;
-  border-color: #c34e2e;
+  background-color: var(--theme-primary-dark);
+  border-color: var(--theme-primary-dark);
 }
 .btn-check:focus + .btn-primary, .btn-primary:focus {
   color: var(--theme-white);
@@ -11976,6 +11976,7 @@ header.conception-hero h1, header.conception-hero .h1 {
 }
 
 .contact-card a:hover {
+  color: var(--theme-primary-dark);
   text-decoration: underline;
 }
 
@@ -12046,6 +12047,7 @@ header.conception-hero h1, header.conception-hero .h1 {
 }
 
 .zapis-section a:hover {
+  color: var(--theme-primary-dark);
   text-decoration: underline;
 }
 
@@ -12227,7 +12229,7 @@ hr.divider-light {
   padding: 0.75rem 0;
 }
 #mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link:active {
-  color: var(--theme-primary);
+  color: var(--theme-primary-dark);
 }
 #mainNav .navbar-nav .nav-item .nav-link.active {
   color: #d4822a !important;
@@ -12262,13 +12264,13 @@ hr.divider-light {
     color: var(--theme-dark);
   }
   #mainNav.navbar-shrink .navbar-brand:hover {
-    color: var(--theme-primary);
+    color: var(--theme-primary-dark);
   }
   #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link {
     color: var(--theme-dark);
   }
   #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link:hover {
-    color: var(--theme-primary);
+    color: var(--theme-primary-dark);
   }
 }
 
