@@ -96,6 +96,63 @@
   border-color: var(--theme-dark);
 }
 
+/* ============================================
+   REUSABLE COMPONENTS & PATTERNS
+   ============================================
+   
+   This section documents reusable component patterns used across the site.
+   All components follow consistent spacing (rem units), accessibility, and responsive design.
+   
+   REUSABLE PATTERNS:
+   
+   1. Two-Column Layout (Image + Text)
+      - Classes: .team-member-image, .team-member-text
+      - Classes: .equipment-image, .equipment-text
+      - Classes: .program-image, .program-text
+      - Classes: .download-image, .download-list
+      - Pattern: 50/50 split, image on left/right (alternating), centered images
+      - Image: 75% max-width, rounded corners, shadow, hover effects
+      - Text: 2rem padding, improved line-height
+   
+   2. Card Components
+      - Classes: .pricing-card, .contact-card
+      - Pattern: Light background, padding, border-radius, hover effects
+      - Use for: Pricing, contact info, feature highlights
+   
+   3. Section Dividers
+      - Classes: .dotted-divider, .dotted-divider-inner
+      - Pattern: Custom dotted line with small squares
+      - Use for: Separating team members, content sections
+   
+   4. List Styling
+      - Classes: .equipment-list, .zazemi-list, .absence-list
+      - Pattern: Custom bullets, improved spacing, background for emphasis
+      - Use for: Equipment lists, facility lists, policy lists
+   
+   5. Hero Sections
+      - Classes: .masthead, .conception-hero
+      - Pattern: Full-width background image, overlay, centered text
+      - Use for: Main landing sections, section headers
+   
+   6. Carousel Components
+      - Classes: #zazemiCarousel, .references-swiper
+      - Pattern: Bootstrap carousel or Swiper.js with custom styling
+      - Use for: Image galleries, testimonials
+   
+   SPACING STANDARDS:
+   - Desktop padding: 2rem
+   - Mobile padding: 1.5rem 1rem
+   - Section margins: mb-5 (desktop), mb-4 (mobile)
+   - All units in rem for responsiveness
+   
+   ACCESSIBILITY:
+   - Skip links: .skip-link
+   - Semantic HTML: <main>, <section>, proper headings
+   - ARIA labels on interactive elements
+   - Focus states on all interactive elements
+   
+   ============================================ */
+
 .bg-theme-primary {
   background-color: var(--theme-primary) !important;
 }
