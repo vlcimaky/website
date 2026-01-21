@@ -12531,8 +12531,8 @@ hr.divider-light {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
-  background: linear-gradient(to bottom, var(--theme-masthead-overlay) 0%, var(--theme-masthead-overlay) 100%), url("../assets/img/1.jpg");
-  background-position: center;
+  background: linear-gradient(to bottom, var(--theme-masthead-overlay) 0%, var(--theme-masthead-overlay) 100%), url("../assets/img/landing_hero.jpg");
+  background-position: bottom;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
