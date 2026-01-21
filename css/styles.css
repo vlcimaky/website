@@ -11531,6 +11531,10 @@ body {
     padding-left: 0;
     padding-top: 2rem;
   }
+
+  .zazemi-text {
+    margin-left: 1rem;
+  }
 }
 
 /* Conception Hero Section - matching masthead style */
