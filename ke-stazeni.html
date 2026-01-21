@@ -207,12 +207,7 @@
     <!-- Footer-->
     <footer class="bg-light py-5">
         <div class="container px-4 px-lg-5">
-            <div class="small text-center text-muted">Vytvořeno &copy; 2025 | Vlčí máky - ke stažení</div>
-        </div>
-
-        <!-- <div class="container px-4 px-lg-5 pt-2">
-            <div class="small text-center text-muted">Distributed By <a href="https://themewagon.com/">Themewagon</a>
-        </div> -->
+            <div class="small text-center text-muted">Vytvořeno &copy; <span id="year"></span> | Vlčí máky - lesní klub Ostrava</div>
         </div>
     </footer>
     <!-- Bootstrap core JS-->
@@ -221,11 +216,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <!-- Dynamic copyright year -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
