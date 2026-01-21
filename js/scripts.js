@@ -56,4 +56,24 @@ window.addEventListener('DOMContentLoaded', event => {
         elements: '#portfolio a.portfolio-box'
     });
 
+    // Activate SimpleLightbox plugin for team member images
+    new SimpleLightbox({
+        elements: '#pedagogove a.team-member-image-link'
+    });
+
+    // Activate SimpleLightbox plugin for equipment images
+    new SimpleLightbox({
+        elements: '#kontakt a.equipment-image-link'
+    });
+
+    // Activate SimpleLightbox plugin for program images
+    new SimpleLightbox({
+        elements: 'a.program-image-link'
+    });
+
+    // Activate SimpleLightbox plugin for download images
+    new SimpleLightbox({
+        elements: 'a.download-image-link'
+    });
+
 });
