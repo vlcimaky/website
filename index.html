@@ -37,7 +37,8 @@
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.svg" />
     <!-- Bootstrap Icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+        rel="stylesheet" />
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
@@ -623,7 +624,8 @@
                                 prodloužené rodiny než-li instituce. Jsme nezisková organizace a nepobíráme žádné
                                 příspěvky
                                 od
-                                státu. Více informací naleznete na stránkách <a href="https://www.lesnims.cz" target="_blank"> lesnims.cz</a>
+                                státu. Více informací naleznete na stránkách <a href="https://www.lesnims.cz"
+                                    target="_blank"> lesnims.cz</a>
                             </div>
                         </div>
                     </div>
@@ -661,37 +663,57 @@
             </div>
         </section>
         <!-- Contact-->
-        <section class="page-section" id="kontakt">
+        <section class="content-head pt-2" id="kontakt">
             <div class="container px-4 px-lg-5">
                 <h2 class="text-center mt-0">Kontakt</h2>
                 <hr class="divider" />
-                <div class="row align-items-start text-center">
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <h5><strong>Markéta Sýkorová</strong></h5>
-                        <p>
-                            Koordinátorka<br>
-                            Tel. <a href="tel:+420792368049">+420 792 368 049</a><br>
-                            E-mail: <a href="mailto:vlcimakyostrava@gmail.com">vlcimakyostrava@gmail.com</a><br>
-                        </p>
-                        <p>
-                            <strong>Spolek - Z města do Lesa</strong><br>
-                            IČO: 09428429<br>
-                            Bankovní spojení: 1033253797/5500<br>
-                        </p>
+                <div class="row align-items-start gx-4 gx-lg-5">
+                    <!-- Contact Information -->
+                    <div class="col-lg-4 col-md-6 col-12 mb-5">
+                        <div class="contact-card">
+                            <h4 class="mb-3"><strong>Markéta Sýkorová</strong></h4>
+                            <p class="text-muted mb-3">
+                                <strong>Koordinátorka</strong><br>
+                                <i class="bi bi-telephone me-2"></i><a href="tel:+420792368049">+420 792 368 049</a><br>
+                                <i class="bi bi-envelope me-2"></i><a
+                                    href="mailto:vlcimakyostrava@gmail.com">vlcimakyostrava@gmail.com</a>
+                            </p>
+                            <hr class="my-3" />
+                            <p class="text-muted mb-0">
+                                <strong>Spolek - Z města do Lesa</strong><br>
+                                IČO: 09428429<br>
+                                Bankovní spojení: 1033253797/5500
+                            </p>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <!-- <h5><strong>Kde nás najdete</strong></h5> -->
-                        <a href="https://maps.app.goo.gl/cyqHCc7z5GVXkoKz9" target="_blank" rel="noopener"
-                            aria-label="Otevřít mapu v Google Maps (otevře se v novém okně)">
-                            <img src="assets/img/mapa-google.jpg" alt="Mapa s umístěním Vlčích máků v Ostravě"
-                                class="img-fluid" style="max-width: 100%; height: auto;" loading="lazy">
-                        </a>
+
+                    <!-- Map -->
+                    <div class="col-lg-4 col-md-6 col-12 mb-5">
+                        <div class="contact-card">
+                            <h4 class="mb-3">Kde nás najdete</h4>
+                            <a href="https://maps.app.goo.gl/cyqHCc7z5GVXkoKz9" target="_blank" rel="noopener"
+                                aria-label="Otevřít mapu v Google Maps (otevře se v novém okně)">
+                                <img src="assets/img/mapa-google.jpg" alt="Mapa s umístěním Vlčích máků v Ostravě"
+                                    class="img-fluid contact-map" loading="lazy" />
+                            </a>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-12 col-12 mb-4">
-                        <h3>Jak se k nám dostanete</h3>
-                        <p>Nejbližší zastávky MHD<br>Hranečník (tram, bus, trolejbus), Zvěřinská (trolejbus)</p>
-                        <p>Dostupnost by neměla být překážkou, a proto když bude zájemců více, můžeme uspořádat hromadné
-                            vyzvedávání na Hranečníku.</p>
+
+                    <!-- Transportation -->
+                    <div class="col-lg-4 col-md-12 col-12 mb-5">
+                        <div class="contact-card">
+                            <h4 class="mb-3">Jak se k nám dostanete</h4>
+                            <p class="text-muted mb-3">
+                                <strong>Nejbližší zastávky MHD:</strong><br>
+                                Hranečník (tram, bus, trolejbus)<br>
+                                Zvěřinská (trolejbus)
+                            </p>
+                            <p class="text-muted mb-0">
+                                Dostupnost by neměla být překážkou, a proto když bude zájemců více, můžeme uspořádat
+                                hromadné
+                                vyzvedávání na Hranečníku.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
