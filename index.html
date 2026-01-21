@@ -414,13 +414,20 @@
         <!-- TODO: Implement Instagram feed integration or embed -->
         <!-- TODO: Add Instagram API integration or embed widget -->
         <!-- TODO: Style Instagram section with actual posts preview -->
-        <section class="page-section bg-primary" id="instagram">
+        <section class="page-section" id="instagram">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8 text-center">
+                    <div class="col-lg-12 text-center">
                         <h2 class="text-white mt-0">Jsme na instagramu</h2>
                         <hr class="divider divider-light" />
-                        <p class="text-white-75 mb-4">Náhled - několik postů a odkaz </p>
+
+                        <div id="ft-insta-app"></div>
+                        <script
+                            type="module">import App from "https://cdn.fouita.com/public/instagram-feed.js?11"; new App({ target: document.getElementById("ft-insta-app"), props: { "settings": { "layout": "masonry", "source": "insta", "selected": "uname", "header": true, "autoplay": false, "zigzag": false, "cols": 4, "cardHeight": 300, "gap": 0, "direction": "down", "height": 700, "bgColor": "", "txtColor": "", "ukey": "fc8eb6a3-7960-406d-8e36-3fd44ab53069" } } });</script>
+                        <div id="ft-insta-brd"><a href="https://fouita.com/website-widgets/instagram-feed"
+                                target="_blank">Vloženo pomocí Instagram Feed</a><a href="https://fouita.com"
+                                target="_blank">with Fouita</a>
+                            </div>
                     </div>
                 </div>
             </div>
