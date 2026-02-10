@@ -1,0 +1,21 @@
+{
+  "name": "vlcimaky-image-optimizer",
+  "version": "1.0.0",
+  "description": "Image optimization script for Vlčí máky website",
+  "main": "generate-images.js",
+  "scripts": {
+    "generate-images": "node generate-images.js"
+  },
+  "keywords": [
+    "image",
+    "optimization",
+    "webp",
+    "responsive"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.33.0"
+  }
+}
+
