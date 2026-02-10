@@ -11541,11 +11541,26 @@ body {
 header.conception-hero {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
-  background: linear-gradient(to bottom, var(--theme-masthead-overlay) 0%, var(--theme-masthead-overlay) 100%), url("../assets/img/14.jpg");
+  background: linear-gradient(to bottom, var(--theme-masthead-overlay) 0%, var(--theme-masthead-overlay) 100%), url("../assets/img/14-480w.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+}
+@media (min-width: 768px) {
+  header.conception-hero {
+    background-image: linear-gradient(to bottom, var(--theme-masthead-overlay) 0%, var(--theme-masthead-overlay) 100%), url("../assets/img/14-768w.webp");
+  }
+}
+@media (min-width: 1200px) {
+  header.conception-hero {
+    background-image: linear-gradient(to bottom, var(--theme-masthead-overlay) 0%, var(--theme-masthead-overlay) 100%), url("../assets/img/14-1200w.webp");
+  }
+}
+@media (min-width: 1920px) {
+  header.conception-hero {
+    background-image: linear-gradient(to bottom, var(--theme-masthead-overlay) 0%, var(--theme-masthead-overlay) 100%), url("../assets/img/14-1920w.webp");
+  }
 }
 
 header.conception-hero h1, header.conception-hero .h1 {
@@ -11769,9 +11784,8 @@ header.conception-hero h1, header.conception-hero .h1 {
   object-fit: cover;
   box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.25), 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 75%;
-  width: auto;
-  height: auto;
+  width: 100%;
+  aspect-ratio: 3 / 4;
   display: block;
 }
 
@@ -11849,7 +11863,7 @@ header.conception-hero h1, header.conception-hero .h1 {
   }
   
   .equipment-image {
-    max-width: 85%;
+    width: 100%;
     margin-bottom: 1.5rem;
   }
   
@@ -12535,11 +12549,26 @@ hr.divider-light {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
-  background: linear-gradient(to bottom, var(--theme-masthead-overlay) 0%, var(--theme-masthead-overlay) 100%), url("../assets/img/landing_hero.jpg");
+  background: linear-gradient(to bottom, var(--theme-masthead-overlay) 0%, var(--theme-masthead-overlay) 100%), url("../assets/img/bg-masthead-480w.webp");
   background-position: bottom;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+}
+@media (min-width: 768px) {
+  header.masthead {
+    background-image: linear-gradient(to bottom, var(--theme-masthead-overlay) 0%, var(--theme-masthead-overlay) 100%), url("../assets/img/bg-masthead-768w.webp");
+  }
+}
+@media (min-width: 1200px) {
+  header.masthead {
+    background-image: linear-gradient(to bottom, var(--theme-masthead-overlay) 0%, var(--theme-masthead-overlay) 100%), url("../assets/img/bg-masthead-1200w.webp");
+  }
+}
+@media (min-width: 1920px) {
+  header.masthead {
+    background-image: linear-gradient(to bottom, var(--theme-masthead-overlay) 0%, var(--theme-masthead-overlay) 100%), url("../assets/img/bg-masthead-1920w.webp");
+  }
 }
 header.masthead h1, header.masthead .h1 {
   font-size: 2.25rem;

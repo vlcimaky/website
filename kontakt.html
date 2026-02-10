@@ -132,8 +132,11 @@
                             <h4 class="mb-3">Kde nás najdete</h4>
                             <a href="https://maps.app.goo.gl/cyqHCc7z5GVXkoKz9" target="_blank" rel="noopener"
                                 aria-label="Otevřít mapu v Google Maps (otevře se v novém okně)">
-                                <img src="assets/img/mapa-google.jpg" alt="Mapa s umístěním Vlčích máků v Ostravě"
-                                    class="img-fluid contact-map" loading="lazy" />
+                                <picture>
+                                    <source srcset="assets/img/mapa-google-600w.webp 600w, assets/img/mapa-google-800w.webp 800w, assets/img/mapa-google-1200w.webp 1200w" sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 400px" type="image/webp">
+                                    <source srcset="assets/img/mapa-google-600w.jpg 600w, assets/img/mapa-google-800w.jpg 800w, assets/img/mapa-google-1200w.jpg 1200w" sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 400px" type="image/jpeg">
+                                    <img src="assets/img/mapa-google-1200w.jpg" alt="Mapa s umístěním Vlčích máků v Ostravě" class="img-fluid contact-map" loading="lazy" />
+                                </picture>
                             </a>
                         </div>
                     </div>

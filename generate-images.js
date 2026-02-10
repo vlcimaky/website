@@ -17,14 +17,15 @@ const fs = require('fs');
 const path = require('path');
 
 // Configuration: Image categories and their required sizes
+// Note: Only width is specified - height will be calculated to maintain aspect ratio
 const IMAGE_CONFIG = {
-  // Hero images (full-width backgrounds)
+  // Hero images (full-width backgrounds) - these can be cropped to landscape
   hero: {
     sizes: [
-      { width: 1920, height: 1080, suffix: '1920w' },
-      { width: 1200, height: 675, suffix: '1200w' },
-      { width: 768, height: 432, suffix: '768w' },
-      { width: 480, height: 270, suffix: '480w' }
+      { width: 1920, suffix: '1920w', maintainAspect: false }, // Allow cropping for hero
+      { width: 1200, suffix: '1200w', maintainAspect: false },
+      { width: 768, suffix: '768w', maintainAspect: false },
+      { width: 480, suffix: '480w', maintainAspect: false }
     ],
     quality: { webp: 85, jpg: 80 },
     images: [
@@ -34,12 +35,12 @@ const IMAGE_CONFIG = {
     ]
   },
 
-  // Content images (50/50 split, max 75% width)
+  // Content images (50/50 split, max 75% width) - preserve aspect ratio
   content: {
     sizes: [
-      { width: 800, height: 600, suffix: '800w' },
-      { width: 600, height: 450, suffix: '600w' },
-      { width: 400, height: 300, suffix: '400w' }
+      { width: 800, suffix: '800w', maintainAspect: true },
+      { width: 600, suffix: '600w', maintainAspect: true },
+      { width: 400, suffix: '400w', maintainAspect: true }
     ],
     quality: { webp: 85, jpg: 80 },
     images: [
@@ -55,13 +56,13 @@ const IMAGE_CONFIG = {
     ]
   },
 
-  // Gallery images (3-column grid)
+  // Gallery images (3-column grid) - preserve aspect ratio
   gallery: {
     sizes: [
-      { width: 1200, height: 800, suffix: '1200w' },
-      { width: 800, height: 533, suffix: '800w' },
-      { width: 600, height: 400, suffix: '600w' },
-      { width: 400, height: 267, suffix: '400w' }
+      { width: 1200, suffix: '1200w', maintainAspect: true },
+      { width: 800, suffix: '800w', maintainAspect: true },
+      { width: 600, suffix: '600w', maintainAspect: true },
+      { width: 400, suffix: '400w', maintainAspect: true }
     ],
     quality: { webp: 85, jpg: 80 },
     images: [
@@ -80,12 +81,12 @@ const IMAGE_CONFIG = {
     ]
   },
 
-  // Portfolio carousel images
+  // Portfolio carousel images - preserve aspect ratio
   portfolio: {
     sizes: [
-      { width: 1200, height: 800, suffix: '1200w' },
-      { width: 800, height: 533, suffix: '800w' },
-      { width: 600, height: 400, suffix: '600w' }
+      { width: 1200, suffix: '1200w', maintainAspect: true },
+      { width: 800, suffix: '800w', maintainAspect: true },
+      { width: 600, suffix: '600w', maintainAspect: true }
     ],
     quality: { webp: 85, jpg: 80 },
     images: [
@@ -101,12 +102,12 @@ const IMAGE_CONFIG = {
     ]
   },
 
-  // Map image
+  // Map image - preserve aspect ratio
   map: {
     sizes: [
-      { width: 1200, height: 600, suffix: '1200w' },
-      { width: 800, height: 400, suffix: '800w' },
-      { width: 600, height: 300, suffix: '600w' }
+      { width: 1200, suffix: '1200w', maintainAspect: true },
+      { width: 800, suffix: '800w', maintainAspect: true },
+      { width: 600, suffix: '600w', maintainAspect: true }
     ],
     quality: { webp: 85, jpg: 80 },
     images: [
@@ -140,36 +141,66 @@ async function processImage(imageConfig, categoryConfig, categoryName) {
   }
 
   console.log(`\n📸 Processing: ${source}`);
+  
+  // Get original image metadata to determine aspect ratio
+  let originalMetadata;
+  try {
+    originalMetadata = await sharp(sourcePath).metadata();
+    const aspectRatio = originalMetadata.width / originalMetadata.height;
+    const orientation = aspectRatio > 1 ? 'landscape' : aspectRatio < 1 ? 'portrait' : 'square';
+    console.log(`  📐 Original: ${originalMetadata.width}×${originalMetadata.height} (${orientation}, ratio: ${aspectRatio.toFixed(2)})`);
+  } catch (error) {
+    console.error(`  ❌ Error reading metadata:`, error.message);
+    stats.errors++;
+    return;
+  }
+
   stats.total += categoryConfig.sizes.length * 2; // WebP + JPG for each size
 
   // Process each size
   for (const size of categoryConfig.sizes) {
-    const { width, height, suffix } = size;
+    const { width, suffix, maintainAspect = true } = size;
     const outputName = `${baseName}-${suffix}`;
 
     try {
-      // Generate WebP
-      const webpPath = path.join(process.cwd(), outputBaseDir, `${outputName}.webp`);
-      await sharp(sourcePath)
-        .resize(width, height, {
+      // Calculate height if maintaining aspect ratio
+      let resizeOptions;
+      if (maintainAspect) {
+        // Maintain aspect ratio - only specify width, height will be calculated
+        resizeOptions = {
+          width: width,
+          fit: 'inside', // Fit inside dimensions, maintain aspect ratio
+          withoutEnlargement: true // Don't upscale if image is smaller
+        };
+      } else {
+        // For hero images, allow cropping to exact dimensions
+        const targetHeight = Math.round(width / (16/9)); // 16:9 aspect ratio for hero
+        resizeOptions = {
+          width: width,
+          height: targetHeight,
           fit: 'cover',
           position: 'center'
-        })
+        };
+      }
+
+      // Generate WebP
+      const webpPath = path.join(process.cwd(), outputBaseDir, `${outputName}.webp`);
+      const webpMetadata = await sharp(sourcePath)
+        .resize(resizeOptions)
         .webp({ quality: categoryConfig.quality.webp })
         .toFile(webpPath);
-      console.log(`  ✅ Generated: ${outputName}.webp (${width}×${height})`);
+      const webpInfo = await sharp(webpPath).metadata();
+      console.log(`  ✅ Generated: ${outputName}.webp (${webpInfo.width}×${webpInfo.height})`);
       stats.processed++;
 
       // Generate JPG fallback
       const jpgPath = path.join(process.cwd(), outputBaseDir, `${outputName}.jpg`);
-      await sharp(sourcePath)
-        .resize(width, height, {
-          fit: 'cover',
-          position: 'center'
-        })
+      const jpgMetadata = await sharp(sourcePath)
+        .resize(resizeOptions)
         .jpeg({ quality: categoryConfig.quality.jpg, progressive: true })
         .toFile(jpgPath);
-      console.log(`  ✅ Generated: ${outputName}.jpg (${width}×${height})`);
+      const jpgInfo = await sharp(jpgPath).metadata();
+      console.log(`  ✅ Generated: ${outputName}.jpg (${jpgInfo.width}×${jpgInfo.height})`);
       stats.processed++;
 
     } catch (error) {

@@ -36,7 +36,7 @@ process_image() {
     local output_name=$2
     local output_dir=$3
     local width=$4
-    local height=$5
+    local maintain_aspect=$5
     local suffix=$6
     local webp_quality=$7
     local jpg_quality=$8
@@ -50,9 +50,28 @@ process_image() {
 
     local output_base="${output_dir}/${output_name}-${suffix}"
     
+    # Get original dimensions
+    local original_dims=$(identify -format "%wx%h" "$source_file" 2>/dev/null)
+    if [ -z "$original_dims" ]; then
+        echo -e "${RED}  ❌ Error reading image dimensions${NC}"
+        ((ERRORS++))
+        return
+    fi
+    
+    local resize_cmd
+    if [ "$maintain_aspect" = "true" ]; then
+        # Maintain aspect ratio - only specify width
+        resize_cmd="-resize ${width}x"
+    else
+        # For hero images, allow cropping to 16:9
+        local height=$((width * 9 / 16))
+        resize_cmd="-resize ${width}x${height}^ -gravity center -extent ${width}x${height}"
+    fi
+    
     # Generate JPG
-    if convert "$source_file" -resize "${width}x${height}^" -gravity center -extent "${width}x${height}" -quality "$jpg_quality" "${output_base}.jpg" 2>/dev/null; then
-        echo -e "${GREEN}  ✅ Generated: ${output_name}-${suffix}.jpg (${width}×${height})${NC}"
+    if convert "$source_file" $resize_cmd -quality "$jpg_quality" "${output_base}.jpg" 2>/dev/null; then
+        local jpg_dims=$(identify -format "%wx%h" "${output_base}.jpg" 2>/dev/null)
+        echo -e "${GREEN}  ✅ Generated: ${output_name}-${suffix}.jpg (${jpg_dims})${NC}"
         ((PROCESSED++))
     else
         echo -e "${RED}  ❌ Error generating ${output_name}-${suffix}.jpg${NC}"
@@ -60,15 +79,17 @@ process_image() {
     fi
 
     # Generate WebP
-    if convert "$source_file" -resize "${width}x${height}^" -gravity center -extent "${width}x${height}" -quality "$webp_quality" "${output_base}.webp" 2>/dev/null; then
-        echo -e "${GREEN}  ✅ Generated: ${output_name}-${suffix}.webp (${width}×${height})${NC}"
+    if convert "$source_file" $resize_cmd -quality "$webp_quality" "${output_base}.webp" 2>/dev/null; then
+        local webp_dims=$(identify -format "%wx%h" "${output_base}.webp" 2>/dev/null)
+        echo -e "${GREEN}  ✅ Generated: ${output_name}-${suffix}.webp (${webp_dims})${NC}"
         ((PROCESSED++))
     else
         # Fallback: use cwebp if convert doesn't support WebP
-        convert "$source_file" -resize "${width}x${height}^" -gravity center -extent "${width}x${height}" "${output_base}.png" 2>/dev/null
+        convert "$source_file" $resize_cmd "${output_base}.png" 2>/dev/null
         if cwebp -q "$webp_quality" "${output_base}.png" -o "${output_base}.webp" 2>/dev/null; then
             rm -f "${output_base}.png"
-            echo -e "${GREEN}  ✅ Generated: ${output_name}-${suffix}.webp (${width}×${height})${NC}"
+            local webp_dims=$(identify -format "%wx%h" "${output_base}.webp" 2>/dev/null)
+            echo -e "${GREEN}  ✅ Generated: ${output_name}-${suffix}.webp (${webp_dims})${NC}"
             ((PROCESSED++))
         else
             rm -f "${output_base}.png"
@@ -88,34 +109,34 @@ process_category() {
     echo "------------------------------------------------------------"
 }
 
-# Hero images
-process_category "HERO" "1920:1080:1920w" "1200:675:1200w" "768:432:768w" "480:270:480w"
+# Hero images (allow cropping to 16:9)
+process_category "HERO" "1920:1920w" "1200:1200w" "768:768w" "480:480w"
 for img in "assets/img/bg-masthead.jpeg:bg-masthead" "assets/img/bg-masthead_1.jpeg:bg-masthead_1" "assets/img/14.jpg:14"; do
     IFS=':' read -r source name <<< "$img"
     output_dir=$(dirname "$source")
     echo -e "\n${BLUE}📸 Processing: $source${NC}"
-    for size in "1920:1080:1920w" "1200:675:1200w" "768:432:768w" "480:270:480w"; do
-        IFS=':' read -r w h suffix <<< "$size"
-        process_image "$source" "$name" "$output_dir" "$w" "$h" "$suffix" 85 80
+    for size in "1920:1920w" "1200:1200w" "768:768w" "480:480w"; do
+        IFS=':' read -r w suffix <<< "$size"
+        process_image "$source" "$name" "$output_dir" "$w" "false" "$suffix" 85 80
     done
 done
 
-# Content images
-process_category "CONTENT" "800:600:800w" "600:450:600w" "400:300:400w"
+# Content images (maintain aspect ratio)
+process_category "CONTENT" "800:800w" "600:600w" "400:400w"
 for img in "assets/img/marketa.jpg:marketa" "assets/img/julie.jpeg:julie" "assets/img/martin_0.jpg:martin_0" \
            "assets/img/janka.jpg:janka" "assets/img/12.jpg:12" "assets/img/5.jpg:5" \
            "assets/img/13.jpg:13" "assets/img/13(1).jpg:13(1)" "assets/img/13(2).jpg:13(2)"; do
     IFS=':' read -r source name <<< "$img"
     output_dir=$(dirname "$source")
     echo -e "\n${BLUE}📸 Processing: $source${NC}"
-    for size in "800:600:800w" "600:450:600w" "400:300:400w"; do
-        IFS=':' read -r w h suffix <<< "$size"
-        process_image "$source" "$name" "$output_dir" "$w" "$h" "$suffix" 85 80
+    for size in "800:800w" "600:600w" "400:400w"; do
+        IFS=':' read -r w suffix <<< "$size"
+        process_image "$source" "$name" "$output_dir" "$w" "true" "$suffix" 85 80
     done
 done
 
-# Gallery images
-process_category "GALLERY" "1200:800:1200w" "800:533:800w" "600:400:600w" "400:267:400w"
+# Gallery images (maintain aspect ratio)
+process_category "GALLERY" "1200:1200w" "800:800w" "600:600w" "400:400w"
 for img in "assets/img/mostovani.jpg:mostovani" "assets/img/komunita_2.jpeg:komunita_2" "assets/img/komunita_3.jpg:komunita_3" \
            "assets/img/tym_0.jpg:tym_0" "assets/img/tym_4.jpg:tym_4" "assets/img/tym_2.jpg:tym_2" \
            "assets/img/vzdelani_0.jpg:vzdelani_0" "assets/img/vzdelani_3.jpg:vzdelani_3" "assets/img/vzdelani_2.jpg:vzdelani_2" \
@@ -123,14 +144,14 @@ for img in "assets/img/mostovani.jpg:mostovani" "assets/img/komunita_2.jpeg:komu
     IFS=':' read -r source name <<< "$img"
     output_dir=$(dirname "$source")
     echo -e "\n${BLUE}📸 Processing: $source${NC}"
-    for size in "1200:800:1200w" "800:533:800w" "600:400:600w" "400:267:400w"; do
-        IFS=':' read -r w h suffix <<< "$size"
-        process_image "$source" "$name" "$output_dir" "$w" "$h" "$suffix" 85 80
+    for size in "1200:1200w" "800:800w" "600:600w" "400:400w"; do
+        IFS=':' read -r w suffix <<< "$size"
+        process_image "$source" "$name" "$output_dir" "$w" "true" "$suffix" 85 80
     done
 done
 
-# Portfolio images
-process_category "PORTFOLIO" "1200:800:1200w" "800:533:800w" "600:400:600w"
+# Portfolio images (maintain aspect ratio)
+process_category "PORTFOLIO" "1200:1200w" "800:800w" "600:600w"
 for img in "assets/img/1.jpg:1" "assets/img/portfolio/fullsize/1.jpeg:portfolio-1:assets/img/portfolio" \
            "assets/img/portfolio/fullsize/2.jpeg:portfolio-2:assets/img/portfolio" \
            "assets/img/portfolio/fullsize/3.jpeg:portfolio-3:assets/img/portfolio" \
@@ -144,21 +165,21 @@ for img in "assets/img/1.jpg:1" "assets/img/portfolio/fullsize/1.jpeg:portfolio-
         output_dir=$(dirname "$source")
     fi
     echo -e "\n${BLUE}📸 Processing: $source${NC}"
-    for size in "1200:800:1200w" "800:533:800w" "600:400:600w"; do
-        IFS=':' read -r w h suffix <<< "$size"
-        process_image "$source" "$name" "$output_dir" "$w" "$h" "$suffix" 85 80
+    for size in "1200:1200w" "800:800w" "600:600w"; do
+        IFS=':' read -r w suffix <<< "$size"
+        process_image "$source" "$name" "$output_dir" "$w" "true" "$suffix" 85 80
     done
 done
 
-# Map image
-process_category "MAP" "1200:600:1200w" "800:400:800w" "600:300:600w"
+# Map image (maintain aspect ratio)
+process_category "MAP" "1200:1200w" "800:800w" "600:600w"
 source="assets/img/mapa-google.jpg"
 name="mapa-google"
 output_dir=$(dirname "$source")
 echo -e "\n${BLUE}📸 Processing: $source${NC}"
-for size in "1200:600:1200w" "800:400:800w" "600:300:600w"; do
-    IFS=':' read -r w h suffix <<< "$size"
-    process_image "$source" "$name" "$output_dir" "$w" "$h" "$suffix" 85 80
+for size in "1200:1200w" "800:800w" "600:600w"; do
+    IFS=':' read -r w suffix <<< "$size"
+    process_image "$source" "$name" "$output_dir" "$w" "true" "$suffix" 85 80
 done
 
 # Summary
