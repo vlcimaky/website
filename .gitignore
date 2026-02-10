@@ -3,7 +3,7 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-# Keep package-lock.json for consistent installs
+# Keep package-lock.json for consistent dependency versions
 # package-lock.json
 yarn.lock
 
@@ -48,4 +48,3 @@ logs/
 *.log
 
 # Note: package-lock.json is kept in repo for consistent dependency versions
-

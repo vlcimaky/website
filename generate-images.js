@@ -113,6 +113,24 @@ const IMAGE_CONFIG = {
     images: [
       { source: 'assets/img/mapa-google.jpg', name: 'mapa-google' }
     ]
+  },
+
+  // Icons (small images, typically square)
+  icons: {
+    sizes: [
+      { width: 400, suffix: '400w', maintainAspect: true }, // 2x for retina
+      { width: 200, suffix: '200w', maintainAspect: true }, // 1x
+      { width: 100, suffix: '100w', maintainAspect: true }  // Small screens
+    ],
+    quality: { webp: 90, jpg: 85 }, // Higher quality for icons
+    images: [
+      { source: 'assets/icons/1.png', name: 'icon-1', outputDir: 'assets/icons' },
+      { source: 'assets/icons/2.png', name: 'icon-2', outputDir: 'assets/icons' },
+      { source: 'assets/icons/3.png', name: 'icon-3', outputDir: 'assets/icons' },
+      { source: 'assets/icons/4.png', name: 'icon-4', outputDir: 'assets/icons' },
+      { source: 'assets/icons/5.png', name: 'icon-5', outputDir: 'assets/icons' },
+      { source: 'assets/icons/6.png', name: 'icon-6', outputDir: 'assets/icons' }
+    ]
   }
 };
 
@@ -155,7 +173,10 @@ async function processImage(imageConfig, categoryConfig, categoryName) {
     return;
   }
 
-  stats.total += categoryConfig.sizes.length * 2; // WebP + JPG for each size
+  // Determine if source is PNG (for icons) or JPG
+  const isPng = sourcePath.toLowerCase().endsWith('.png');
+  const fallbackFormat = isPng ? 'png' : 'jpg';
+  stats.total += categoryConfig.sizes.length * 2; // WebP + fallback for each size
 
   // Process each size
   for (const size of categoryConfig.sizes) {
@@ -193,14 +214,24 @@ async function processImage(imageConfig, categoryConfig, categoryName) {
       console.log(`  ✅ Generated: ${outputName}.webp (${webpInfo.width}×${webpInfo.height})`);
       stats.processed++;
 
-      // Generate JPG fallback
-      const jpgPath = path.join(process.cwd(), outputBaseDir, `${outputName}.jpg`);
-      const jpgMetadata = await sharp(sourcePath)
-        .resize(resizeOptions)
-        .jpeg({ quality: categoryConfig.quality.jpg, progressive: true })
-        .toFile(jpgPath);
-      const jpgInfo = await sharp(jpgPath).metadata();
-      console.log(`  ✅ Generated: ${outputName}.jpg (${jpgInfo.width}×${jpgInfo.height})`);
+      // Generate fallback (PNG for icons, JPG for photos)
+      const fallbackPath = path.join(process.cwd(), outputBaseDir, `${outputName}.${fallbackFormat}`);
+      let fallbackMetadata;
+      if (isPng) {
+        // PNG for icons (preserves transparency)
+        fallbackMetadata = await sharp(sourcePath)
+          .resize(resizeOptions)
+          .png({ quality: categoryConfig.quality.jpg, compressionLevel: 9 })
+          .toFile(fallbackPath);
+      } else {
+        // JPG for photos
+        fallbackMetadata = await sharp(sourcePath)
+          .resize(resizeOptions)
+          .jpeg({ quality: categoryConfig.quality.jpg, progressive: true })
+          .toFile(fallbackPath);
+      }
+      const fallbackInfo = await sharp(fallbackPath).metadata();
+      console.log(`  ✅ Generated: ${outputName}.${fallbackFormat} (${fallbackInfo.width}×${fallbackInfo.height})`);
       stats.processed++;
 
     } catch (error) {
