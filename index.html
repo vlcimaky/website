@@ -42,11 +42,15 @@
     <link rel="preload" as="image" href="assets/img/bg-masthead-768w.webp" media="(min-width: 768px) and (max-width: 1199px)" fetchpriority="high" />
     <link rel="preload" as="image" href="assets/img/bg-masthead-1200w.webp" media="(min-width: 1200px)" fetchpriority="high" />
     
-    <!-- Google fonts - load with display=swap (already done) -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-        rel="stylesheet" />
+    <!-- Critical CSS - Load first for faster FCP -->
+    <link rel="stylesheet" href="css/critical.css" />
     
-    <!-- Core theme CSS (includes Bootstrap) - Critical, load first -->
+    <!-- Google fonts - optimized for mobile: fewer weights, display=optional for faster FCP -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700&family=Merriweather:wght@400;700&display=optional"
+        rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700&family=Merriweather:wght@400;700&display=optional" rel="stylesheet" /></noscript>
+    
+    <!-- Core theme CSS (includes Bootstrap) - Load after critical CSS -->
     <link href="css/styles.css" rel="stylesheet" />
     
     <!-- Non-critical CSS - Defer loading -->
@@ -131,10 +135,6 @@
                     <h4 class="text-white-75 mb-3">Hledáš laskavou alternativu předškolního vzdělávání, odkud se tvoje
                         dítě bude domů vracet ošlehané větrem, vonící lesem, s jiskrou v očích, a se srdcem plným
                         zážitků? </h4>
-                    <p class="text-white-75"><strong>DNY OTEVŘENÝCH DVEŘÍ</strong></p>
-                    <p class="text-white-75">27.2.2026 | 3.4.2026 </p>
-                    <p class="text-white-75"><strong>TERMÍN ZÁPISU 2026/2027</strong></p>
-                    <p class="text-white-75 mb-5">30.4.2026 </p>
                     <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
                         <a class="btn btn-primary btn-xl" href="/kontakt.html">Kontaktujte nás</a>
                     </div>
